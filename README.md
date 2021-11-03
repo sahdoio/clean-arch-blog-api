@@ -2,7 +2,7 @@
 Source code for the Blog Post API
 
 ## Prerequisites
-The minimal server requirements for deploy are the following:
+The minimal requirements are the following:
 
   * Nodejs requirements:
     * nodejs >= 14.17
