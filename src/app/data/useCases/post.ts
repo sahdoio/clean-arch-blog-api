@@ -14,8 +14,10 @@ export class Post implements PostUc {
   ) { }
 
   async exec (data?: PostDto): Promise<Result<PostResultDto>> {
+    let result = []
+
     // get posts
-    let posts = await this.postService.exec()
+    const posts = await this.postService.exec()
    
     if (posts.code === 200) {
       // get user info and 
@@ -50,9 +52,9 @@ export class Post implements PostUc {
         filteredData.push(post)         
       }
 
-      posts.data = filteredData
-    }
+      result = filteredData
+    } 
 
-    return ok('success', posts)
+    return ok('success', result)
   }
 }
