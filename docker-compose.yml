@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  blog-api:
+    container_name: blog-api
+    image: blog-api
+    build:
+      context: .
+      dockerfile: docker/nodejs.Dockerfile
+    volumes:
+      - ./:/var/www/app
+      - /var/www/app/node_modules
+    environment:
+      - npm_config_unsafe_perm=true
+    ports:
+      - "3000:3000"
+

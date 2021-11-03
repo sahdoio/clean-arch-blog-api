@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "b6d78fc4-743c-4b78-9229-086f944d12b7",
+		"name": "Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Alive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Blog Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/posts?start=1&size=2",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/test_not_found",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"test_not_found"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "root",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "api",
+			"value": "http://localhost:3000/api"
+		}
+	]
+}
